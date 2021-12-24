@@ -3,7 +3,7 @@ import tinycolor from "tinycolor2";
 
 export default makeStyles(theme => ({
   containerHeight: {
-    height: "calc(100vh - 200px)"
+    height: "calc(100vh - 100px)"
   },
   layoutContainer: {
     height: 200,

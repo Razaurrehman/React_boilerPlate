@@ -99,20 +99,21 @@ function Sidebar({ location }) {
     >
       <div className={classes.mobileBackButton}>
         <IconButton
-          className={classes.mobileBackButton} onClick={() => toggleSidebar(layoutDispatch)}>
+          className={classNames({ [classes.mobileBackButton]: isSidebarOpened , [classes.hide]: !isSidebarOpened})}
+          onClick={() => toggleSidebar(layoutDispatch)}>
           <ArrowBackIcon/>
         </IconButton>
       </div>
       <List className={classes.sidebarList}>
-       {structure.map(link => (
-         <SidebarLink
-           key={link.id}
-           location={location}
-           isSidebarOpened={isSidebarOpened}
-           {...link}
-         />
-       ))}
-</List>
+          {structure.map(link => (
+            <SidebarLink
+              key={link.id}
+              location={location}
+              isSidebarOpened={isSidebarOpened}
+              {...link}
+            />
+          ))}
+      </List>
     </Drawer>
   );
 

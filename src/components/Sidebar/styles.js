@@ -9,6 +9,10 @@ export default makeStyles(theme => ({
   },
   hide: {
     display: "none",
+    transition: theme.transitions.create("width", {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
   },
   drawer: {
     width: drawerWidth,
@@ -47,8 +51,10 @@ export default makeStyles(theme => ({
     marginTop: theme.spacing(6),
   }, */
   mobileBackButton: {
-    marginTop: theme.spacing(0.5),
-    marginLeft: 18,
+    display: "flex",
+    justifyContent: 'flex-end',
+    height: 63,
+    marginRight: '10px',
     [theme.breakpoints.only("sm")]: {
       marginTop: theme.spacing(0.625),
     }

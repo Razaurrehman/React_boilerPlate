@@ -20,7 +20,7 @@ export default makeStyles(theme => ({
     }),
   },
   fakeToolbar: {
-    ...theme.mixins.toolbar,
+    height: 60
   },
   link: {
     '&:not(:first-child)': {
