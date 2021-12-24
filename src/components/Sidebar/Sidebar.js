@@ -6,8 +6,9 @@ import {
   FormatSize as TypographyIcon,
   BorderAll as TableIcon,
   ArrowBack as ArrowBackIcon,
+  ArrowForward as ArrowForwardIcon
 } from "@material-ui/icons";
-import { useTheme } from "@material-ui/styles";
+import { useTheme, styled } from "@material-ui/styles";
 import { withRouter } from "react-router-dom";
 import classNames from "classnames";
 
@@ -53,6 +54,15 @@ const structure = [
   // }
 ];
 
+const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+  padding: theme.spacing(0, 1),
+  // necessary for content to be below app bar
+  ...theme.mixins.toolbar,
+}));
+
 function Sidebar({ location }) {
   var classes = useStyles();
   var theme = useTheme();
@@ -87,26 +97,22 @@ function Sidebar({ location }) {
       }}
       open={isSidebarOpened}
     >
-      <div className={classes.toolbar} />
       <div className={classes.mobileBackButton}>
-        <IconButton onClick={() => toggleSidebar(layoutDispatch)}>
-          <ArrowBackIcon
-            classes={{
-              root: classNames(classes.headerIcon, classes.headerIconCollapse),
-            }}
-          />
+        <IconButton
+          className={classes.mobileBackButton} onClick={() => toggleSidebar(layoutDispatch)}>
+          <ArrowBackIcon/>
         </IconButton>
       </div>
       <List className={classes.sidebarList}>
-        {structure.map(link => (
-          <SidebarLink
-            key={link.id}
-            location={location}
-            isSidebarOpened={isSidebarOpened}
-            {...link}
-          />
-        ))}
-      </List>
+       {structure.map(link => (
+         <SidebarLink
+           key={link.id}
+           location={location}
+           isSidebarOpened={isSidebarOpened}
+           {...link}
+         />
+       ))}
+</List>
     </Drawer>
   );
 
@@ -144,3 +150,6 @@ export default withRouter(Sidebar);
 //   link: "",
 //   icon: <Dot size="small" color="primary" />,
 // },
+
+
+

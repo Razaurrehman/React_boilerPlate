@@ -13,13 +13,28 @@ export default makeStyles(theme => ({
       display: "none",
     },
   },
-  appBar: {
-    width: "100vw",
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(["margin"], {
+  drawer: {
+    width: 'calc(100vw - 240px)',
+    flexShrink: 0,
+    whiteSpace: "nowrap",
+  },
+  headerOpen: {
+    width: 'calc(100vw - 240px)',
+    transition: theme.transitions.create("width", {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  headerClose: {
+    width: 'calc(100vw - 96px)',
+    transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
+    overflowX: "hidden",
+    [theme.breakpoints.down("sm")]: {
+      width: '100vw',
+    },
   },
   toolbar: {
     paddingLeft: theme.spacing(2),

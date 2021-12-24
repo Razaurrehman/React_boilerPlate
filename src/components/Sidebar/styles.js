@@ -51,9 +51,6 @@ export default makeStyles(theme => ({
     marginLeft: 18,
     [theme.breakpoints.only("sm")]: {
       marginTop: theme.spacing(0.625),
-    },
-    [theme.breakpoints.up("md")]: {
-      display: "none",
-    },
+    }
   },
 }));

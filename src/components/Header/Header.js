@@ -105,7 +105,19 @@ export default function Header(props) {
   var [isSearchOpen, setSearchOpen] = useState(false);
 
   return (
-    <AppBar position="fixed" className={classes.appBar}>
+    <AppBar position="fixed" 
+            className={classNames(classes.drawer, {
+              [classes.headerOpen]: layoutState.isSidebarOpened,
+              [classes.headerClose]: !layoutState.isSidebarOpened,
+            })}
+            classes={{
+              paper: classNames({
+                [classes.headerOpen]: layoutState.isSidebarOpened,
+                [classes.headerClose]: !layoutState.isSidebarOpened,
+              }),
+            }}
+            open={layoutState.isSidebarOpened}
+    >
       <Toolbar className={classes.toolbar}>
         <IconButton
           color="inherit"
@@ -116,15 +128,7 @@ export default function Header(props) {
           )}
         >
           {layoutState.isSidebarOpened ? (
-            <ArrowBackIcon
-              classes={{
-                root: classNames(
-                  classes.headerIcon,
-                  classes.headerIconCollapse,
-                ),
-              }}
-            />
-          ) : (
+            <></>) : (
             <MenuIcon
               classes={{
                 root: classNames(
@@ -203,79 +207,7 @@ export default function Header(props) {
         >
           <AccountIcon classes={{ root: classes.headerIcon }} />
         </IconButton>
-        <Menu
-          id="mail-menu"
-          open={Boolean(mailMenu)}
-          anchorEl={mailMenu}
-          onClose={() => setMailMenu(null)}
-          MenuListProps={{ className: classes.headerMenuList }}
-          className={classes.headerMenu}
-          classes={{ paper: classes.profileMenu }}
-          disableAutoFocusItem
-        >
-          <div className={classes.profileMenuUser}>
-            <Typography variant="h4" weight="medium">
-              New Messages
-            </Typography>
-            <Typography
-              className={classes.profileMenuLink}
-              component="a"
-              color="secondary"
-            >
-              {messages.length} New Messages
-            </Typography>
-          </div>
-          {messages.map(message => (
-            <MenuItem key={message.id} className={classes.messageNotification}>
-              <div className={classes.messageNotificationSide}>
-                <UserAvatar color={message.variant} name={message.name} />
-                <Typography size="sm" color="text" colorBrightness="secondary">
-                  {message.time}
-                </Typography>
-              </div>
-              <div
-                className={classNames(
-                  classes.messageNotificationSide,
-                  classes.messageNotificationBodySide,
-                )}
-              >
-                <Typography weight="medium" gutterBottom>
-                  {message.name}
-                </Typography>
-                <Typography color="text" colorBrightness="secondary">
-                  {message.message}
-                </Typography>
-              </div>
-            </MenuItem>
-          ))}
-          <Fab
-            variant="extended"
-            color="primary"
-            aria-label="Add"
-            className={classes.sendMessageButton}
-          >
-            Send New Message
-            <SendIcon className={classes.sendButtonIcon} />
-          </Fab>
-        </Menu>
-        <Menu
-          id="notifications-menu"
-          open={Boolean(notificationsMenu)}
-          anchorEl={notificationsMenu}
-          onClose={() => setNotificationsMenu(null)}
-          className={classes.headerMenu}
-          disableAutoFocusItem
-        >
-          {notifications.map(notification => (
-            <MenuItem
-              key={notification.id}
-              onClick={() => setNotificationsMenu(null)}
-              className={classes.headerMenuItem}
-            >
-              <Notification {...notification} typographyVariant="inherit" />
-            </MenuItem>
-          ))}
-        </Menu>
+  
         <Menu
           id="profile-menu"
           open={Boolean(profileMenu)}
