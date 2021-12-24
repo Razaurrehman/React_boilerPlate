@@ -2,6 +2,9 @@ import { makeStyles } from "@material-ui/styles";
 import tinycolor from "tinycolor2";
 
 export default makeStyles(theme => ({
+  containerHeight: {
+    height: "calc(100vh - 200px)"
+  },
   layoutContainer: {
     height: 200,
     display: "flex",
