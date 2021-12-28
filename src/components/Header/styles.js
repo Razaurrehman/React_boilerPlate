@@ -58,29 +58,6 @@ export default makeStyles(theme => ({
       backgroundColor: fade(theme.palette.common.black, 0.08),
     },
   },
-  searchFocused: {
-    backgroundColor: fade(theme.palette.common.black, 0.08),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: 250,
-    },
-  },
-  searchIcon: {
-    width: 36,
-    right: 0,
-    height: "100%",
-    position: "absolute",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    transition: theme.transitions.create("right"),
-    "&:hover": {
-      cursor: "pointer",
-    },
-  },
-  searchIconOpened: {
-    right: theme.spacing(1.25),
-  },
   inputRoot: {
     color: "inherit",
     width: "100%",
@@ -154,37 +131,21 @@ export default makeStyles(theme => ({
       cursor: "pointer",
     },
   },
-  messageNotification: {
-    height: "auto",
-    display: "flex",
-    alignItems: "center",
-    "&:hover, &:focus": {
-      backgroundColor: theme.palette.background.light,
-    },
+  logoutMenuItem: {
+    color: theme.palette.text.hint,
   },
-  messageNotificationSide: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+  logoutMenuIcon: {
     marginRight: theme.spacing(2),
+    color: theme.palette.text.hint,
+    '&:hover': {
+      color: theme.palette.primary.main,
+    }
   },
-  messageNotificationBodySide: {
-    alignItems: "flex-start",
-    marginRight: 0,
-  },
-  sendMessageButton: {
-    margin: theme.spacing(4),
-    marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(2),
-    textTransform: "none",
-  },
-  sendButtonIcon: {
-    marginLeft: theme.spacing(2),
-  },
-  purchaseBtn: {
-    [theme.breakpoints.down('sm')]: {
-      display: 'none'
+  logoutMenuLink: {
+    fontSize: 16,
+    textDecoration: "none",
+    "&:hover": {
+      cursor: "pointer",
     },
-    marginRight: theme.spacing(3)
   }
 }));

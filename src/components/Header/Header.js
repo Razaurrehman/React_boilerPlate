@@ -92,19 +92,6 @@ export default function Header(props) {
           classes={{ paper: classes.profileMenu }}
           disableAutoFocusItem
         >
-          <div className={classes.profileMenuUser}>
-            <Typography variant="h4" weight="medium">
-              John Smith
-            </Typography>
-            <Typography
-              className={classes.profileMenuLink}
-              component="a"
-              color="primary"
-              href="https://flatlogic.com"
-            >
-              Flalogic.com
-            </Typography>
-          </div>
           <MenuItem
             className={classNames(
               classes.profileMenuItem,
@@ -115,19 +102,11 @@ export default function Header(props) {
           </MenuItem>
           <MenuItem
             className={classNames(
-              classes.profileMenuItem,
+              classes.logoutMenuItem,
               classes.headerMenuItem,
             )}
           >
-            <AccountIcon className={classes.profileMenuIcon} /> Tasks
-          </MenuItem>
-          <MenuItem
-            className={classNames(
-              classes.profileMenuItem,
-              classes.headerMenuItem,
-            )}
-          >
-            <AccountIcon className={classes.profileMenuIcon} /> Messages
+            <AccountIcon className={classes.logoutMenuIcon} /> Logout 
           </MenuItem>
           <div className={classes.profileMenuUser}>
             <Typography

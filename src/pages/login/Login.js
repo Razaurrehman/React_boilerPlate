@@ -39,8 +39,7 @@ function Login(props) {
   return (
     <Grid container className={classes.container}>
       <div className={classes.logotypeContainer}>
-        <img src={logo} alt="logo" className={classes.logotypeImage} />
-        <Typography className={classes.logotypeText}>Material Admin</Typography>
+        <Typography className={classes.logotypeText}>Admin Panel</Typography>
       </div>
       <div className={classes.formContainer}>
         <div className={classes.form}>
@@ -244,9 +243,6 @@ function Login(props) {
             </React.Fragment>
           )}
         </div>
-        <Typography color="primary" className={classes.copyright}>
-        © 2014-{new Date().getFullYear()} <a style={{ textDecoration: 'none', color: 'inherit' }} href="https://flatlogic.com" rel="noopener noreferrer" target="_blank">Flatlogic</a>, LLC. All rights reserved.
-        </Typography>
       </div>
     </Grid>
   );
