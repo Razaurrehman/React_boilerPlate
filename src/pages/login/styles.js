@@ -137,12 +137,7 @@ export default makeStyles(theme => ({
   loginLoader: {
     marginLeft: theme.spacing(4),
   },
-  copyright: {
-    marginTop: theme.spacing(4),
-    whiteSpace: "nowrap",
-    [theme.breakpoints.up("md")]: {
-      position: "absolute",
-      bottom: theme.spacing(2),
-    },
-  },
+  logonButton: {
+    color: "white",
+  }
 }));

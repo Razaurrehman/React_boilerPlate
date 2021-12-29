@@ -71,9 +71,12 @@ function Sidebar({ location }) {
       }}
       open={isSidebarOpened}
     >
+      <div className={classes.toolbar} />
       <div className={classes.mobileBackButton}>
         <IconButton
-          className={classNames({ [classes.mobileBackButton]: isSidebarOpened , [classes.hide]: !isSidebarOpened})}
+          classes={{
+          root: classNames(classes.headerIcon, classes.headerIconCollapse),
+          }}
           onClick={() => toggleSidebar(layoutDispatch)}>
           <ArrowBackIcon/>
         </IconButton>

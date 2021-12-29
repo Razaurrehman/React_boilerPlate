@@ -101,7 +101,7 @@ export default makeStyles(theme => ({
   },
   headerIcon: {
     fontSize: 28,
-    color: "rgba(255, 255, 255, 0.35)",
+    color: "white",
   },
   headerIconCollapse: {
     color: "white",
@@ -147,5 +147,10 @@ export default makeStyles(theme => ({
     "&:hover": {
       cursor: "pointer",
     },
-  }
+  },
+  mobileBackButton: {
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
+  },
 }));

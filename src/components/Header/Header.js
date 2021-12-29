@@ -9,6 +9,7 @@ import {
 import {
   Menu as MenuIcon,
   Person as AccountIcon,
+  ArrowBack as ArrowBackIcon
 } from "@material-ui/icons";
 import classNames from "classnames";
 
@@ -61,7 +62,15 @@ export default function Header(props) {
           )}
         >
           {layoutState.isSidebarOpened ? (
-            <></>) : (
+            <ArrowBackIcon
+                classes={{
+                  root: classNames(
+                    classes.headerIcon,
+                    classes.headerIconCollapse,
+                    classes.mobileBackButton
+                  ),
+                }}
+            />) : (
             <MenuIcon
               classes={{
                 root: classNames(
@@ -106,9 +115,7 @@ export default function Header(props) {
               classes.headerMenuItem,
             )}
           >
-            <AccountIcon className={classes.logoutMenuIcon} /> Logout 
-          </MenuItem>
-          <div className={classes.profileMenuUser}>
+            <AccountIcon className={classes.logoutMenuIcon} />
             <Typography
               className={classes.profileMenuLink}
               color="primary"
@@ -116,7 +123,7 @@ export default function Header(props) {
             >
               Sign Out
             </Typography>
-          </div>
+          </MenuItem>
         </Menu>
       </Toolbar>
     </AppBar>

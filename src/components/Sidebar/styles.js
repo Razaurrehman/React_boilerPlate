@@ -51,12 +51,13 @@ export default makeStyles(theme => ({
     marginTop: theme.spacing(6),
   }, */
   mobileBackButton: {
-    display: "flex",
-    justifyContent: 'flex-end',
-    height: 63,
-    marginRight: '10px',
+    marginTop: theme.spacing(0.5),
+    marginLeft: 18,
     [theme.breakpoints.only("sm")]: {
       marginTop: theme.spacing(0.625),
-    }
+    },
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+    },
   },
 }));

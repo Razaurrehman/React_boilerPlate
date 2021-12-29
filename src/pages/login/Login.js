@@ -16,7 +16,6 @@ import classnames from "classnames";
 import useStyles from "./styles";
 
 // logo
-import logo from "./logo.svg";
 import google from "../../images/google.svg";
 
 // context
@@ -55,9 +54,6 @@ function Login(props) {
           </Tabs>
           {activeTabId === 0 && (
             <React.Fragment>
-              <Typography variant="h1" className={classes.greeting}>
-                Good Morning, User
-              </Typography>
               <Button size="large" className={classes.googleButton}>
                 <img src={google} alt="google" className={classes.googleIcon} />
                 &nbsp;Sign in with Google
@@ -123,6 +119,7 @@ function Login(props) {
                     variant="contained"
                     color="primary"
                     size="large"
+                    className={classes.logonButton}
                   >
                     Login
                   </Button>
